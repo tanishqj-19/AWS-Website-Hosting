@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Virtual Pet Simulation</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f7e9e3;
+  }
+  #pet-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #ffafcc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  button:hover {
+    background-color: #ff6b88;
+  }
+</style>
+</head>
+<body>
+  <div id="pet-container">
+    <h2>Virtual Pet</h2>
+    <img id="pet-image" src="https://via.placeholder.com/150" alt="Virtual Pet">
+    <p id="pet-status">Hello! I'm your virtual pet.</p>
+    <button id="feed-btn">Feed</button>
+    <button id="play-btn">Play</button>
+    <button id="pet-btn">Pet</button>
+  </div>
+  <script>
+    const petImage = document.getElementById("pet-image");
+    const petStatus = document.getElementById("pet-status");
+    const feedBtn = document.getElementById("feed-btn");
+    const playBtn = document.getElementById("play-btn");
+    const petBtn = document.getElementById("pet-btn");
+    feedBtn.addEventListener("click", () => {
+      petImage.src = "https://via.placeholder.com/150/ffccaf?text=Fed";
+      petStatus.textContent = "Yum! I'm full now.";
+    });
+    playBtn.addEventListener("click", () => {
+      petImage.src = "https://via.placeholder.com/150/ffccaf?text=Happy";
+      petStatus.textContent = "Wee! That was fun!";
+    });
+    petBtn.addEventListener("click", () => {
+      petImage.src = "https://via.placeholder.com/150/ffccaf?text=Patted";
+      petStatus.textContent = "Aww, that feels nice!";
+    });
+  </script>
+</body>
+</html>
